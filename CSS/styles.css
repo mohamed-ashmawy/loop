@@ -282,17 +282,19 @@ body::after {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    min-height: 500px;
 }
 
 /* Services Heading - Half Outline, Half Solid */
 .services-heading {
     position: absolute;
-    top: 50%;
+    top: calc(100vh - 100%);
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 5;
     text-align: center;
     width: 100%;
+    pointer-events: none;
 }
 
 .services-title {
@@ -309,7 +311,6 @@ body::after {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 2px #6bc69d;
-    text-shadow: 2px #6bc69d;
 }
 
 /* Services Grid */
@@ -317,12 +318,10 @@ body::after {
     position: relative;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    padding: 0;
-    margin-top: 80px;
+    gap: 25px;
+    padding: 0 20px;
+    margin: 0 auto;
     max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .service-card {
@@ -337,7 +336,7 @@ body::after {
     backdrop-filter: blur(10px);
     transition: all 0.4s ease;
     cursor: pointer;
-    min-height: 100px;
+    min-height: 80px;
 }
 
 .service-card::before {
@@ -411,17 +410,33 @@ body::after {
         height: 270px;
     }
 
+    .services-content {
+        min-height: 450px;
+    }
+
     .services-grid {
-        gap: 30px;
+        gap: 20px;
+        padding: 0 15px;
     }
 
     .service-card {
-        padding: 30px 40px;
-        min-height: 100px;
+        padding: 22px 35px;
+        min-height: 85px;
     }
 
     .services-title {
         font-size: clamp(2.5rem, 6vw, 5rem);
+        letter-spacing: 6px;
+    }
+
+    .service-top-left,
+    .service-top-right {
+        margin-bottom: 70px;
+    }
+
+    .service-bottom-left,
+    .service-bottom-right {
+        margin-top: 70px;
     }
 }
 
@@ -467,18 +482,34 @@ body::after {
     }
 
     .services-section {
-        padding: 80px 0;
+        padding: 60px 0;
+    }
+
+    .services-content {
+        display: flex;
+        flex-direction: column;
+        min-height: auto;
+        gap: 40px;
+    }
+
+    .services-heading {
+        position: static;
+        transform: none;
+        width: 100%;
+        margin-bottom: 20px;
     }
 
     .services-grid {
+        position: static;
         grid-template-columns: 1fr;
         gap: 20px;
-        margin-top: 60px;
+        margin-top: 0;
+        padding: 0 20px;
     }
 
     .service-card {
-        padding: 25px 30px;
-        min-height: 80px;
+        padding: 20px 25px;
+        min-height: 70px;
         border-radius: 30px;
     }
 
